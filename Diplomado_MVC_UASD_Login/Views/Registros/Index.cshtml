@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Diplomado_MVC_UASD_Login.Models.User>
+
+<p>
+    <div class="btn btn-warning">@Html.ActionLink("Create New", "Create")</div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            
+            <div class="btn btn-warning" >@Html.ActionLink("Editar", "Edit", new { id = item.IdUser })</div>
+            <div class="btn btn-warning" >@Html.ActionLink("Detalles", "Details", new { id = item.IdUser })</div>
+            <div class="btn btn-warning" >@Html.ActionLink("Borrar", "Delete", new { id = item.IdUser })</div>
+</td>
+    </tr>
+}
+
+</table>
